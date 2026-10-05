@@ -38,6 +38,6 @@ export default defineNuxtConfig({
   routeRules: {
     '/': { swr: 60 },
     '/stories/**': { swr: 60 },
-    '/privacy': { prerender: true },
+    // '/privacy': { prerender: true },
   },
 })
