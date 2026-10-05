@@ -36,8 +36,8 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { swr: 60 },
-    '/stories/**': { swr: 60 },
+    '/': { headers: { 'cache-control': 'public, s-maxage=60, stale-while-revalidate=300' } },
+    '/stories/**': { headers: { 'cache-control': 'public, s-maxage=60, stale-while-revalidate=300' } },
     // '/privacy': { prerender: true },
   },
 })
