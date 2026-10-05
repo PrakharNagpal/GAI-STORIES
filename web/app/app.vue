@@ -1,9 +1,12 @@
 <script setup lang="ts">
-const { data } = await useAsyncData('test', () =>
-  useSanityClient().fetch<string[]>(`*[_type == "story"].title`),
-)
+useHead({
+  titleTemplate: (title) => (title ? `${title} | Shared Stories` : 'Shared Stories: real health journeys'),
+})
 </script>
 
 <template>
-  <pre>{{ data }}</pre>
+  <NuxtLoadingIndicator color="#a94b24" />
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
