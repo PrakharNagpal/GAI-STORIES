@@ -9,4 +9,7 @@ useHead({
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+  <ClientOnly>
+    <ConsentBanner />
+  </ClientOnly>
 </template>

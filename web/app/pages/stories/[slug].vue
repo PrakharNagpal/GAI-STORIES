@@ -22,7 +22,7 @@ const story: Story = data.value
 
 const article = ref<HTMLElement | null>(null)
 const progress = useReadingProgress(article)
-
+useStoryAnalytics(story.slug, progress)
 // SEO: page title, description, social preview card, canonical URL and JSON-LD structured data.
 const { siteUrl } = useRuntimeConfig().public
 const canonical = `${siteUrl}/stories/${story.slug}`
