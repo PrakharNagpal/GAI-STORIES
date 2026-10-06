@@ -11,7 +11,8 @@
     "typecheck": "nuxi typecheck",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "typegen": "cd ../studio && npx sanity schema extract --enforce-required-fields --force && npx sanity typegen generate"
+    "typegen": "cd ../studio && npx sanity schema extract --enforce-required-fields --force && npx sanity typegen generate",
+    "test": "vitest run"
   },
   "dependencies": {
     "@nuxt/fonts": "^0.14.0",
@@ -30,6 +31,7 @@
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.9.9",
     "typescript": "^6.0.3",
+    "vitest": "^5.0.3",
     "vue-tsc": "^3.3.12"
   }
 }

@@ -1,7 +1,5 @@
 import type {Ref} from 'vue'
 
-const MILESTONES = [25, 50, 75, 100] as const
-
 export function useStoryAnalytics(slug: string, progress: Readonly<Ref<number>>) {
   const {consent} = useConsent()
   const reached = new Set<number>()
@@ -24,12 +22,9 @@ export function useStoryAnalytics(slug: string, progress: Readonly<Ref<number>>)
 
   function checkDepth(p: number) {
     if (!active) return
-    const percent = Math.round(p * 100)
-    for (const m of MILESTONES) {
-      if (percent >= m && !reached.has(m)) {
-        reached.add(m)
-        track('scroll_depth', {slug, percent: m})
-      }
+    for (const m of newMilestones(p, reached)) {
+      reached.add(m)
+      track('scroll_depth', {slug, percent: m})
     }
   }
 

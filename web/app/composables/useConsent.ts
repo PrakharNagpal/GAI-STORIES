@@ -1,12 +1,6 @@
-import {CONSENT_KEY, SESSION_KEY} from '~/utils/analytics'
+import {browserOptedOut, CONSENT_KEY, SESSION_KEY} from '~/utils/analytics'
 
 export type Consent = 'granted' | 'denied'
-
-/** Global Privacy Control or Do Not Track means the browser has already said no. */
-function browserOptedOut(): boolean {
-  const nav = navigator as Navigator & {globalPrivacyControl?: boolean}
-  return nav.globalPrivacyControl === true || navigator.doNotTrack === '1'
-}
 
 export function useConsent() {
   // null = not asked yet. useState shares one value across all components.
@@ -18,7 +12,7 @@ export function useConsent() {
     try {
       const saved = localStorage.getItem(CONSENT_KEY)
       if (saved === 'granted' || saved === 'denied') consent.value = saved
-      else if (browserOptedOut()) consent.value = 'denied'
+      else if (browserOptedOut(navigator)) consent.value = 'denied'
     } catch {
       // Storage blocked (strict privacy mode): stay undecided and simply never track.
     }

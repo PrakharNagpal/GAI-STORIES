@@ -53,3 +53,16 @@ export function track(name: AnalyticsEventName, props: Props = {}): void {
     }).catch(() => {})
   }
 }
+
+export const MILESTONES = [25, 50, 75, 100] as const
+
+/** Scroll milestones that `progress` (0..1) has reached and that are not in `reached` yet. */
+export function newMilestones(progress: number, reached: ReadonlySet<number>): number[] {
+  const percent = Math.round(progress * 100)
+  return MILESTONES.filter((m) => percent >= m && !reached.has(m))
+}
+
+/** Global Privacy Control or Do Not Track means the browser has already said no. */
+export function browserOptedOut(nav: {globalPrivacyControl?: boolean; doNotTrack?: string | null}) {
+  return nav.globalPrivacyControl === true || nav.doNotTrack === '1'
+}
