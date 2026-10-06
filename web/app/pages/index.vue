@@ -91,11 +91,7 @@ useSeoMeta({
           <h2 id="all-heading" class="section-title">All stories</h2>
           <label class="search">
             <span class="visually-hidden">Search stories</span>
-            <input
-              v-model="search"
-              type="search"
-              placeholder="Search by title, summary or author"
-            />
+            <input v-model="search" type="search" placeholder="Search stories" />
           </label>
         </div>
 
@@ -194,8 +190,15 @@ useSeoMeta({
   justify-content: space-between;
 }
 
+.search {
+  flex: 1 1 14rem;
+  max-width: 22rem;
+}
+
 .search input {
-  width: min(100%, 22rem);
+  box-sizing: border-box;
+  width: 100%;
+  text-overflow: ellipsis;
   padding: 0.65rem 1rem;
   border: 1px solid var(--line);
   border-radius: 999px;
