@@ -36,6 +36,14 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
+    '/**': {
+      headers: {
+        'X-Content-Type-Options': 'nosniff',
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+        'X-Frame-Options': 'SAMEORIGIN',
+        'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+      },
+    },
     '/': { headers: { 'cache-control': 'public, s-maxage=60, stale-while-revalidate=300' } },
     '/stories/**': { headers: { 'cache-control': 'public, s-maxage=60, stale-while-revalidate=300' } },
     '/privacy': { prerender: true },
