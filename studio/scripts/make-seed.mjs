@@ -152,7 +152,7 @@ const stories = [
         title: s.title,
         slug: { _type: 'slug', current: slug },
         summary: s.summary,
-        featuredImage: image(s.img, `Photograph accompanying the story "${s.title}"`),
+        featuredImage: image(s.img, `Stock photograph chosen to illustrate the story "${s.title}"`),
         author: { _type: 'reference', _ref: s.author },
         publishedDate: s.date,
         featured: s.featured,

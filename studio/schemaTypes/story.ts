@@ -1,6 +1,6 @@
 import { defineArrayMember, defineField, defineType } from 'sanity'
 import  BookIcon from '@sanity/icons/Book'
-import  StarIcon from '@sanity/icons/Book'
+import StarIcon from '@sanity/icons/Star'
 
 export const story = defineType({
     name: 'story',
