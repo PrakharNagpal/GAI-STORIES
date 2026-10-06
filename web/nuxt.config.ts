@@ -14,12 +14,6 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
         { rel: 'preconnect', href: 'https://cdn.sanity.io' },
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap',
-        },
       ],
     },
   },
@@ -47,5 +41,15 @@ export default defineNuxtConfig({
     '/': { headers: { 'cache-control': 'public, s-maxage=60, stale-while-revalidate=300' } },
     '/stories/**': { headers: { 'cache-control': 'public, s-maxage=60, stale-while-revalidate=300' } },
     '/privacy': { prerender: true },
+  },
+
+  modules: ['@nuxt/fonts'],
+
+  fonts: {
+    families: [
+      { name: 'Fraunces', provider: 'google', weights: [500, 650] },
+      { name: 'Source Serif 4', provider: 'google', weights: [400, 600], styles: ['normal', 'italic'] },
+      { name: 'Inter', provider: 'google', weights: [400, 500, 600] },
+    ],
   },
 })

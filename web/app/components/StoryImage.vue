@@ -33,6 +33,7 @@ const placeholder = computed(() =>
 <template>
     <img class="story-image" :src="src" :srcset="srcset" :sizes="sizes" :width="largest" :height="height"
         :alt="image.alt ?? ''" :loading="eager ? 'eager' : 'lazy'" decoding="async" :style="placeholder">
+    v-bind="eager ? { fetchpriority: 'high' } : {}"
 </template>
 
 <style scoped>
