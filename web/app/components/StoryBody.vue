@@ -5,8 +5,17 @@ import type { PortableTextBlock } from '@portabletext/types'
 import StoryImage from './StoryImage.vue'
 import type { SanityImage } from '~/types/sanity'
 
-defineProps<{ value: PortableTextBlock[] }>()
+const props = defineProps<{ value: PortableTextBlock[] }>()
 
+// Editors often leave blank paragraphs (an extra Enter, pasted text).
+// Drop them so spacing stays consistent and the drop cap lands on real text.
+function isEmptyParagraph(block: PortableTextBlock): boolean {
+    if (block._type !== 'block' || (block.style ?? 'normal') !== 'normal') return false
+    const children = (block.children ?? []) as Array<{ text?: string }>
+    return children.every((child) => !child.text?.trim())
+}
+
+const blocks = computed(() => props.value.filter((block) => !isEmptyParagraph(block)))
 // Custom renderers for content types the default renderer does not know about.
 const components: PortableTextComponents = {
     types: {
