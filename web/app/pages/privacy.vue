@@ -44,7 +44,7 @@ const { consent, grant, deny } = useConsent()
         <h2>Why</h2>
         <p>
             To learn which stories readers finish and where they stop, so the editorial team can improve how stories
-            are written and presented. We do not use it to profile individuals or infer anything about their health.
+            are written and presented. We do not use it to profile individuals or infer anything sensitive about them.
         </p>
 
         <h2>How long we keep it</h2>
