@@ -25,6 +25,8 @@ npm run dev                                   # http://localhost:3000
 npm run build && node --env-file=.env .output/server/index.mjs
 ```
 
+Useful web scripts: `npm run lint`, `npm run format`, and `npm run typegen`. Typegen regenerates `web/app/types/sanity.generated.ts` from the Studio schema and the GROQ queries in `web/app/utils/queries.ts`; rerun it after changing either. `NUXT_PUBLIC_SITE_URL` sets the canonical URL, sitemap and robots.txt host; on Vercel it falls back to the production domain.
+
 ## Content model
 
 - `story`: title, slug, summary, featured image, author, published date, featured flag, tags and a Portable Text body.

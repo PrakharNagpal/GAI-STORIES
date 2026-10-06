@@ -35,7 +35,9 @@ export default defineConfig({
   document: {
     actions: (actions, {schemaType}) =>
       schemaType === 'siteSettings'
-        ? actions.filter(({action}) => action && ['publish', 'discardChanges', 'restore'].includes(action))
+        ? actions.filter(
+            ({action}) => action && ['publish', 'discardChanges', 'restore'].includes(action),
+          )
         : actions,
   },
 })

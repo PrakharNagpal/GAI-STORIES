@@ -1,4 +1,4 @@
-import type { Ref } from 'vue'
+import type {Ref} from 'vue'
 
 /**
  * Returns a 0..1 value for how far the reader has scrolled through `target`.
@@ -24,8 +24,8 @@ export function useReadingProgress(target: Ref<HTMLElement | null>) {
   }
 
   onMounted(() => {
-    window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onScroll, { passive: true })
+    window.addEventListener('scroll', onScroll, {passive: true})
+    window.addEventListener('resize', onScroll, {passive: true})
     update()
   })
 

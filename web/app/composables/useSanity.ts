@@ -1,4 +1,4 @@
-import { createClient, type SanityClient } from '@sanity/client'
+import {createClient, type SanityClient} from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
 
 type ImageUrlBuilder = ReturnType<typeof imageUrlBuilder>
@@ -10,7 +10,7 @@ let builder: ImageUrlBuilder | undefined
 /** One shared read-only client. Config never changes per request, so a module singleton is safe. */
 export function useSanityClient(): SanityClient {
   if (!client) {
-    const { sanity } = useRuntimeConfig().public
+    const {sanity} = useRuntimeConfig().public
     if (!sanity.projectId) {
       throw new Error('Missing NUXT_PUBLIC_SANITY_PROJECT_ID')
     }

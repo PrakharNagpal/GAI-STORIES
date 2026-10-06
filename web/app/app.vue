@@ -1,6 +1,7 @@
 <script setup lang="ts">
 useHead({
-  titleTemplate: (title) => (title ? `${title} | In Their Words` : 'In Their Words: personal stories from across Asia'),
+  titleTemplate: (title) =>
+    title ? `${title} | In Their Words` : 'In Their Words: personal stories from across Asia',
 })
 </script>
 

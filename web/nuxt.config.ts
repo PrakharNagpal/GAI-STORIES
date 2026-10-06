@@ -1,20 +1,30 @@
+// Explicit env var wins. On Vercel, fall back to the production domain it provides, so canonical
+// links and the sitemap never point at localhost by accident.
+const siteUrl = (
+  process.env.NUXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : '') ||
+  'http://localhost:3000'
+).replace(/\/$/, '')
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+  devtools: {enabled: true},
   css: ['~/assets/css/main.css'],
-  features: { inlineStyles: true },
+  features: {inlineStyles: true},
 
   app: {
     head: {
-      htmlAttrs: { lang: 'en' },
+      htmlAttrs: {lang: 'en'},
       // the title template is set in app.vue: config must be serialisable, so no functions here
       meta: [
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'theme-color', content: '#FBF7F1' },
+        {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+        {name: 'theme-color', content: '#FBF7F1'},
       ],
       link: [
-        { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
-        { rel: 'preconnect', href: 'https://cdn.sanity.io' },
+        {rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml'},
+        {rel: 'preconnect', href: 'https://cdn.sanity.io'},
       ],
     },
   },
@@ -26,7 +36,7 @@ export default defineNuxtConfig({
         dataset: 'production',
         apiVersion: '2025-02-19',
       },
-      siteUrl: 'http://localhost:3000',
+      siteUrl,
     },
   },
 
@@ -39,18 +49,23 @@ export default defineNuxtConfig({
         'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
       },
     },
-    '/': { headers: { 'cache-control': 'public, s-maxage=60, stale-while-revalidate=300' } },
-    '/stories/**': { headers: { 'cache-control': 'public, s-maxage=60, stale-while-revalidate=300' } },
-    '/privacy': { prerender: true },
+    '/': {headers: {'cache-control': 'public, s-maxage=60, stale-while-revalidate=300'}},
+    '/stories/**': {headers: {'cache-control': 'public, s-maxage=60, stale-while-revalidate=300'}},
+    '/privacy': {prerender: true},
   },
 
-  modules: ['@nuxt/fonts'],
+  modules: ['@nuxt/fonts', '@nuxt/eslint'],
 
   fonts: {
     families: [
-      { name: 'Fraunces', provider: 'google', weights: [500, 650] },
-      { name: 'Source Serif 4', provider: 'google', weights: [400, 600], styles: ['normal', 'italic'] },
-      { name: 'Inter', provider: 'google', weights: [400, 500, 600] },
+      {name: 'Fraunces', provider: 'google', weights: [500, 650]},
+      {
+        name: 'Source Serif 4',
+        provider: 'google',
+        weights: [400, 600],
+        styles: ['normal', 'italic'],
+      },
+      {name: 'Inter', provider: 'google', weights: [400, 500, 600]},
     ],
   },
 })

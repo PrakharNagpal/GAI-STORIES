@@ -23,7 +23,8 @@ export const siteSettings = defineType({
     defineField({
       name: 'intro',
       title: 'Homepage intro',
-      description: 'One or two sentences describing the site. Also used as the homepage meta description. Do not mention specific stories.',
+      description:
+        'One or two sentences describing the site. Also used as the homepage meta description. Do not mention specific stories.',
       type: 'text',
       rows: 3,
       validation: (rule) => rule.max(240),

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { NuxtError } from '#app'
+import type {NuxtError} from '#app'
 
-const props = defineProps<{ error: NuxtError }>()
+const props = defineProps<{error: NuxtError}>()
 const is404 = computed(() => props.error.statusCode === 404)
 
-useHead({ title: is404.value ? 'Page not found' : 'Something went wrong' })
+useHead({title: is404.value ? 'Page not found' : 'Something went wrong'})
 </script>
 
 <template>
@@ -15,12 +15,23 @@ useHead({ title: is404.value ? 'Page not found' : 'Something went wrong' })
       <p class="meta">
         {{ is404 ? 'It may have been moved or unpublished.' : 'Please try again in a moment.' }}
       </p>
-      <button type="button" class="btn" @click="clearError({ redirect: '/' })">Back to all stories</button>
+      <button type="button" class="btn" @click="clearError({redirect: '/'})">
+        Back to all stories
+      </button>
     </section>
   </NuxtLayout>
 </template>
 
 <style scoped>
-.error { padding: clamp(4rem, 12vw, 8rem) 0; text-align: center; display: grid; justify-items: center; gap: 0.75rem; }
-.error h1 { font-size: clamp(2rem, 5vw, 3rem); max-width: 20ch; }
+.error {
+  padding: clamp(4rem, 12vw, 8rem) 0;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+}
+.error h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  max-width: 20ch;
+}
 </style>
