@@ -1,5 +1,8 @@
 # In Their Words
 
+- Live site: https://gai-stories.vercel.app
+- Code: https://github.com/PrakharNagpal/GAI-STORIES
+
 A small platform for personal stories from across Asia, built with Nuxt 4 and Sanity for the Global Asia Institute take-home.
 
 ## Stack and setup
@@ -43,3 +46,7 @@ All sample stories and people are fictional.
 | Consent | Analytics only run after an explicit opt in, and Global Privacy Control or Do Not Track counts as a no. | Reading behaviour can reveal sensitive interests, for example which stories about health, family or religion someone reads |
 
 See `/privacy` on the site for the visitor-facing explanation.
+
+## AI declaration
+
+I used Claude as a coding assistant, to help me understand concepts in Vue and Sanity, and for debugging. The architecture and design decisions are my own.
