@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
     title: 'Privacy and analytics',
-    description: 'What Shared Stories records about reading, why, and how to change your choice.',
+    description: 'What In Their Words records about reading, why, and how to change your choice.',
 })
 const { consent, grant, deny } = useConsent()
 </script>

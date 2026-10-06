@@ -4,7 +4,7 @@
 
         <header class="site-header">
             <div class="container header-inner">
-                <NuxtLink to="/" class="brand">Shared Stories</NuxtLink>
+                <NuxtLink to="/" class="brand">In Their Words</NuxtLink>
                 <nav aria-label="Main">
                     <NuxtLink to="/#all-stories">All stories</NuxtLink>
                     <NuxtLink to="/privacy">Privacy</NuxtLink>
@@ -18,7 +18,7 @@
 
         <footer class="site-footer">
             <div class="container footer-inner">
-                <p>Shared Stories is a demo built for the Global Asia Institute take-home assessment. All stories and
+                <p>In Their Words is a demo built for the Global Asia Institute take-home assessment. All stories and
                     people are fictional.</p>
                 <NuxtLink to="/privacy">Privacy and analytics</NuxtLink>
             </div>
