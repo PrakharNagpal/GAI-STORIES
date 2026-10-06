@@ -19,6 +19,7 @@ const cardFields = /* groq */ `
 const published = `_type == "story" && defined(slug.current) && defined(publishedDate)`
 
 export const homeQuery = /* groq */ `{
+  "settings": *[_id == "siteSettings"][0]{ eyebrow, heading, intro },
   "featured": *[${published} && featured == true] | order(publishedDate desc)[0...3]{ ${cardFields} },
   "stories": *[${published}] | order(publishedDate desc){ ${cardFields} }
 }`

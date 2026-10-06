@@ -29,6 +29,9 @@ const authors = [
     { _id: 'author-arjun', name: 'Arjun Menon', bio: 'Software tester, son, and reluctant expert on dementia care.' },
     { _id: 'author-nurul', name: 'Nurul Huda', bio: 'Accountant and weekend runner based in Tampines.' },
     { _id: 'author-wei-ming', name: 'Lim Wei Ming', bio: 'Former ward nurse, now volunteering with a patient support group.' },
+    { _id: 'author-maria', name: 'Maria Santos', bio: 'Hotel front desk supervisor. Moved from Cebu to Singapore in 2019.' },
+    { _id: 'author-jia-hui', name: 'Ong Jia Hui', bio: 'Third-year university student, usually found studying at her grandparents\' flat.' },
+    { _id: 'author-rahul', name: 'Rahul Iyer', bio: 'Former bank analyst, now running a drinks stall in Jurong West.' },
 ].map((a) => ({ _type: 'author', ...a }))
 
 const stories = [
@@ -104,6 +107,43 @@ const stories = [
             block('Food is how my family says the things we do not say out loud. Changing the recipes was a way of saying stay.', 'blockquote'),
         ],
     },
+    {
+        title: 'Moving from Cebu with One Suitcase',
+        author: 'author-maria', date: '2026-09-28', featured: true, img: 1062,
+        tags: ['migration', 'work'],
+        summary: 'I arrived at Changi with one suitcase, a job offer and no idea how to order kopi. Seven years later, this is home.',
+        body: [
+            block('My mother packed the suitcase for me. Half of it was dried mangoes for people I had not met yet.'),
+            block('The first year', 'h2'),
+            block('I worked night shifts at the hotel and called home every Sunday. I did not tell my family how lonely it was, because they had enough to worry about.'),
+            block('Home stopped being one place. Now it is two, and I miss whichever one I am not in.', 'blockquote'),
+            block('Last month I taught a new colleague from Davao how to order kopi siew dai. She laughed at my accent. I laughed too.'),
+        ],
+    },
+    {
+        title: 'Learning Teochew to Talk to My Grandfather',
+        author: 'author-jia-hui', date: '2026-09-15', featured: true, img: 1067,
+        tags: ['family', 'language'],
+        summary: 'For twenty years my grandfather and I smiled at each other across a language gap. At twenty, I decided to close it.',
+        body: [
+            block('Ah Gong speaks Teochew. I grew up with English and Mandarin. Our conversations were mostly nods and food being pushed towards me.'),
+            block('I started with YouTube videos and my aunt\'s voice notes. My first full sentence to him was about the weather, and it was wrong.'),
+            block('He corrected me, slowly, then told me a story about his kampung that nobody in the family had heard before.'),
+            block('We are still not fluent with each other. But on Saturdays now, we talk.'),
+        ],
+    },
+    {
+        title: 'Leaving Finance to Open a Drinks Stall',
+        author: 'author-rahul', date: '2026-08-20', featured: false, img: 1074,
+        tags: ['work', 'career change'],
+        summary: 'Everyone said I was throwing away a good career. Some days I agree with them. Most days I do not.',
+        body: [
+            block('I spent six years building spreadsheets about other people\'s businesses. At some point I wanted one of my own.'),
+            block('What nobody tells you', 'h2'),
+            block('The stall opens at 6 a.m. My first week, I burned my hand twice and made less in a day than I used to earn in an hour.'),
+            block('But the uncle who orders teh-o kosong every morning now waits for me if I am late. No spreadsheet ever did that.'),
+        ],
+    },
 ].map((s) => {
     const slug = slugify(s.title)
     return {
@@ -121,6 +161,14 @@ const stories = [
     }
 })
 
-const lines = [...authors, ...stories].map((doc) => JSON.stringify(doc)).join('\n')
+const settings = {
+    _id: 'siteSettings',
+    _type: 'siteSettings',
+    eyebrow: 'Personal stories from across Asia',
+    heading: 'Stories about family, work, health and starting over',
+    intro: 'First-person accounts from people across Asia. Some are about big changes, some about ordinary days.',
+}
+
+const lines = [settings, ...authors, ...stories].map((doc) => JSON.stringify(doc)).join('\n')
 writeFileSync(new URL('../seed.ndjson', import.meta.url), lines + '\n')
-console.log(`Wrote ${authors.length} authors and ${stories.length} stories to seed.ndjson`)
+console.log(`Wrote site settings, ${authors.length} authors and ${stories.length} stories to seed.ndjson`)

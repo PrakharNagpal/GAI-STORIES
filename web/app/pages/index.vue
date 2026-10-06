@@ -30,13 +30,24 @@ function clearFilters() {
     activeTag.value = null
 }
 
+// Fallbacks only apply if the Site settings document is missing or a field is empty.
+const HERO_FALLBACK = {
+    eyebrow: 'Personal stories from across Asia',
+    heading: 'Stories told by the people who lived them',
+    intro: 'First-person accounts from people across Asia. Some are about big changes, some about ordinary days.',
+}
+
+const hero = computed(() => ({
+    eyebrow: data.value?.settings?.eyebrow?.trim() || HERO_FALLBACK.eyebrow,
+    heading: data.value?.settings?.heading?.trim() || HERO_FALLBACK.heading,
+    intro: data.value?.settings?.intro?.trim() || HERO_FALLBACK.intro,
+}))
+
 const { siteUrl } = useRuntimeConfig().public
-const description =
-    'Personal stories of illness, recovery and caregiving from patients, families and clinicians across Singapore.'
 useSeoMeta({
-    description,
-    ogTitle: 'Shared Stories',
-    ogDescription: description,
+    description: () => hero.value.intro,
+    ogTitle: 'In Their Words',
+    ogDescription: () => hero.value.intro,
     ogType: 'website',
     ogUrl: siteUrl,
     ogImage: () =>
@@ -49,12 +60,10 @@ useSeoMeta({
     <div>
         <section class="hero">
             <div class="container hero-inner">
-                <p class="eyebrow">Real people, real recovery</p>
-                <h1>Stories of health, care and getting through it together</h1>
-                <p class="lede">
-                    Personal accounts from patients, caregivers and clinicians. Read slowly, and take what helps.
-                </p>
-                <a href="#all-stories" class="btn btn--ghost">Browse all stories</a>
+                <p class="eyebrow">{{ hero.eyebrow }}</p>
+                <h1>{{ hero.heading }}</h1>
+                <p class="lede">{{ hero.intro }}</p>
+                <a href="#all-stories" class="btn btn--ghost">See all stories</a>
             </div>
         </section>
 

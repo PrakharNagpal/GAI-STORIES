@@ -36,7 +36,14 @@ export interface Story extends StoryCard {
     related: StoryCard[]
 }
 
+export interface SiteSettings {
+    eyebrow?: string
+    heading?: string
+    intro?: string
+}
+
 export interface HomeData {
+    settings: SiteSettings | null
     featured: StoryCard[]
     stories: StoryCard[]
 }
