@@ -10,13 +10,13 @@ const props = withDefaults(
         aspect?: number
         eager?: boolean
     }>(),
-    { widths: () => [400, 640, 960, 1280, 1600], sizes: '100vw', aspect: undefined, eager: false },
+    { widths: () => [400, 640, 800, 960, 1280, 1600], sizes: '100vw', aspect: undefined, eager: false },
 )
 
 const ratio = computed(() => props.aspect ?? props.image.dimensions?.aspectRatio ?? 3 / 2)
 
 function build(w: number): string {
-    let b = urlFor(props.image).width(w).auto('format').quality(80)
+    let b = urlFor(props.image).width(w).auto('format').quality(75)
     if (props.aspect) b = b.height(Math.round(w / props.aspect)).fit('crop')
     return b.url()
 }
@@ -32,8 +32,8 @@ const placeholder = computed(() =>
 
 <template>
     <img class="story-image" :src="src" :srcset="srcset" :sizes="sizes" :width="largest" :height="height"
-        :alt="image.alt ?? ''" :loading="eager ? 'eager' : 'lazy'" decoding="async" :style="placeholder">
-    v-bind="eager ? { fetchpriority: 'high' } : {}"
+        :alt="image.alt ?? ''" :loading="eager ? 'eager' : 'lazy'" decoding="async" :style="placeholder"
+        v-bind="eager ? { fetchpriority: 'high' } : {}">
 </template>
 
 <style scoped>
