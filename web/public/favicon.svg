@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#a94b24"/>
-  <text x="32" y="44" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="#fbf7f1">I</text>
+  <title>In Their Words</title>
+  <rect width="64" height="64" rx="14" fill="#2b2522"/>
+  <!-- Serif capital I, drawn as a path so it does not depend on any font -->
+  <path fill="#fbf7f1" d="M21 14H43V19.5H36V44.5H43V50H21V44.5H28V19.5H21Z"/>
 </svg>
