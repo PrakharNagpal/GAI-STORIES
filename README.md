@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="web/public/favicon.svg" alt="In Their Words logo" width="72" height="72">
-
 # In Their Words
 
 **Personal stories from across Asia.**
@@ -9,11 +7,6 @@
 A small platform for first-person stories, built with Nuxt 4 and Sanity for the Global Asia Institute take-home.
 
 [Live site](https://gai-stories.vercel.app) · [Source code](https://github.com/PrakharNagpal/GAI-STORIES)
-
-![Nuxt 4](https://img.shields.io/badge/Nuxt-4-00DC82?logo=nuxt&logoColor=white)
-![Sanity](https://img.shields.io/badge/Sanity-CMS-F03E2F?logo=sanity&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)
-![Node](https://img.shields.io/badge/Node-24-339933?logo=nodedotjs&logoColor=white)
 
 </div>
 
