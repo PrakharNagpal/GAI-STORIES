@@ -12,6 +12,40 @@ A small platform for first-person stories, built with Nuxt 4 and Sanity for the 
 
 ---
 
+## Screenshots
+
+### Website
+
+**Landing page**
+
+![Landing page with the hero text from Sanity Site settings](docs/screenshots/web-home.png)
+
+**Featured stories**
+
+![Featured stories section with one large card and two compact cards](docs/screenshots/web-featured.png)
+
+**All stories, with topic filters**
+
+![All stories grid with topic filter chips](docs/screenshots/web-all-stories.png)
+
+**Privacy and analytics controls**
+
+![Privacy page where readers can turn reading statistics on or off](docs/screenshots/web-privacy.png)
+
+### Sanity Studio
+
+**Site settings singleton** (edits the homepage hero text)
+
+![Site settings document in Sanity Studio](docs/screenshots/studio-site-settings.png)
+
+**Stories**
+
+![Story list and editor in Sanity Studio](docs/screenshots/studio-stories.png)
+
+**Authors**
+
+![Author list and editor in Sanity Studio](docs/screenshots/studio-authors.png)
+
 ## Highlights
 
 ### Website

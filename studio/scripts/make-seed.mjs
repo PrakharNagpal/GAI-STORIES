@@ -210,7 +210,7 @@ const stories = [
     author: 'author-maria',
     date: '2026-09-28',
     featured: true,
-    img: 1062,
+    img: 155,
     tags: ['migration', 'work'],
     summary:
       'I arrived at Changi with one suitcase, a job offer and no idea how to order kopi. Seven years later, this is home.',
