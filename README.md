@@ -12,40 +12,6 @@ A small platform for first-person stories, built with Nuxt 4 and Sanity for the 
 
 ---
 
-## Screenshots
-
-### Website
-
-**Landing page**
-
-![Landing page with the hero text from Sanity Site settings](docs/screenshots/web-home.png)
-
-**Featured stories**
-
-![Featured stories section with one large card and two compact cards](docs/screenshots/web-featured.png)
-
-**All stories, with topic filters**
-
-![All stories grid with topic filter chips](docs/screenshots/web-all-stories.png)
-
-**Privacy and analytics controls**
-
-![Privacy page where readers can turn reading statistics on or off](docs/screenshots/web-privacy.png)
-
-### Sanity Studio
-
-**Site settings singleton** (edits the homepage hero text)
-
-![Site settings document in Sanity Studio](docs/screenshots/studio-site-settings.png)
-
-**Stories**
-
-![Story list and editor in Sanity Studio](docs/screenshots/studio-stories.png)
-
-**Authors**
-
-![Author list and editor in Sanity Studio](docs/screenshots/studio-authors.png)
-
 ## Highlights
 
 ### Website
@@ -159,6 +125,55 @@ All sample stories and people are fictional.
 | Consent | Analytics only run after an explicit opt in, and Global Privacy Control or Do Not Track counts as a no. | Reading behaviour can reveal sensitive interests, for example which stories about health, family or religion someone reads |
 
 See `/privacy` on the site for the visitor-facing explanation.
+
+## Screenshots
+
+### Website
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/web-home.png" alt="Landing page with the hero text from Sanity Site settings"><br>
+      <sub><b>Landing page</b></sub>
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/web-featured.png" alt="Featured stories section with one large card and two compact cards"><br>
+      <sub><b>Featured stories</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/web-all-stories.png" alt="All stories grid with topic filter chips"><br>
+      <sub><b>All stories, with topic filters</b></sub>
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/web-privacy.png" alt="Privacy page where readers can turn reading statistics on or off"><br>
+      <sub><b>Privacy and analytics controls</b></sub>
+    </td>
+  </tr>
+</table>
+
+### Sanity Studio
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/studio-site-settings.png" alt="Site settings document in Sanity Studio"><br>
+      <sub><b>Site settings (edits the homepage hero text)</b></sub>
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/studio-stories.png" alt="Story list and editor in Sanity Studio"><br>
+      <sub><b>Stories</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/studio-authors.png" alt="Author list and editor in Sanity Studio"><br>
+      <sub><b>Authors</b></sub>
+    </td>
+    <td width="50%"></td>
+  </tr>
+</table>
 
 ## AI declaration
 
